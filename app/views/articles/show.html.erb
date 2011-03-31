@@ -1,0 +1,24 @@
+
+<h1><%= @article.title %></h1>
+
+<p class='tag_list'>
+  <em>Tagged:</em>
+  <%= @article.tag_list %>
+</p>
+
+<h3>
+  <%= @article.body %>
+</h3>
+
+<div class='article_actions'>
+<%= link_to "edit", edit_article_path(@article)%>
+<br />
+<%= link_to "delete", article_path(@article), :method => :delete, :confirm => "Delete #{@article.title}?}"%>
+<br />
+<br />
+<br />
+<%= link_to("Back to all articles", articles_path) %>
+</div>
+<br />
+
+<%= render :partial => 'comments' %>
